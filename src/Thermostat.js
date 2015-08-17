@@ -7,7 +7,18 @@ var Thermostat = function(){
   };
 
   Thermostat.prototype.increase = function () {
-    currentTemperature++;
+    // if current temp less than 32, current ++, else current tepm
+    if (currentTemperature < 32) {
+        currentTemperature++;
+      }
     return currentTemperature;
   };
+
+  Thermostat.prototype.decrease = function () {
+    if (currentTemperature > 10) {
+      currentTemperature--;
+    }
+    return currentTemperature;
+  };
+
 };
