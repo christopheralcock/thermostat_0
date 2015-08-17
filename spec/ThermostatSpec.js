@@ -69,6 +69,17 @@ describe('Thermostat', function() {
       for (i = 20; i > 17; i--) {thermostat.decrease()};
       expect(thermostat.colour()).toEqual("green");
     });
+
+    it('yellow for under 18-24', function(){
+      for (i = 20; i < 24; i++) {thermostat.increase()};
+      expect(thermostat.colour()).toEqual("yellow");
+    });
+
+    it('red for over 25', function(){
+      for (i = 20; i < 30; i++) {thermostat.increase()};
+      expect(thermostat.colour()).toEqual("red");
+    });
+
   });
 
 

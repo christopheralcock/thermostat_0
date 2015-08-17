@@ -39,9 +39,12 @@ var Thermostat = function(){
     if (currentTemperature < 18) {
       return "green";
     }
+    else if (currentTemperature < 25) {
+      return "yellow";
+    }
+    else {
+      return "red";
+    }
   };
-
-
-
 
 };
