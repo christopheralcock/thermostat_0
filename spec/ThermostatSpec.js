@@ -3,6 +3,7 @@ describe('Thermostat', function() {
 
   beforeEach(function(){
     thermostat = new Thermostat();
+    thermostat.powerSaveOn();
   });
 
   describe('it displays', function() {
@@ -23,7 +24,8 @@ describe('Thermostat', function() {
       expect(thermostat.increase()).toEqual(21);
     });
 
-    it('the temperture up to 32 but not beyond', function(){
+    it('the temperture up to MaxTemperature but not beyond', function(){
+      thermostat.powerSaveOff();
       for (i = 20; i < 32; i++) {thermostat.increase()};
       expect(thermostat.increase()).toEqual(32);
     });
@@ -32,7 +34,6 @@ describe('Thermostat', function() {
       for (i = 20; i < 25; i++) {thermostat.increase()};
       expect(thermostat.increase()).toEqual(25);
     });
-
 
     it('the temperture downwards', function(){
       expect(thermostat.decrease()).toEqual(19);
@@ -43,5 +44,16 @@ describe('Thermostat', function() {
       expect(thermostat.decrease()).toEqual(10);
     });
 
+  });
+
+  describe('it has a powersaving button', function(){
+    it('which increases MaxTemperature when turned off', function(){
+      thermostat.powerSaveOff();
+      expect(MaxTemperature).toEqual(32);
+    });
+
+    it('which decreases the MaxTemperature when turned on', function(){
+      expect(MaxTemperature).toEqual(25);
+    });
   });
 });
