@@ -35,6 +35,13 @@ var Thermostat = function(){
     return currentTemperature;
   };
 
+  Thermostat.prototype.colour = function () {
+    if (currentTemperature < 18) {
+      return "green";
+    }
+  };
+
+
 
 
 };

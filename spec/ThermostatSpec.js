@@ -64,6 +64,13 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('it designates colour', function(){
+    it('green for under 18', function(){
+      for (i = 20; i > 17; i--) {thermostat.decrease()};
+      expect(thermostat.colour()).toEqual("green");
+    });
+  });
+
 
 
 
