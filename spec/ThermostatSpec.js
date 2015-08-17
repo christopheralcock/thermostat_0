@@ -56,4 +56,16 @@ describe('Thermostat', function() {
       expect(MaxTemperature).toEqual(25);
     });
   });
+
+  describe('it has a reser button', function(){
+    it('which resets the temperature to default temperature', function(){
+      thermostat.resetTemperature();
+      expect(thermostat.temperature()).toEqual(20);
+    });
+  });
+
+
+
+
+
 });

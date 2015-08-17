@@ -30,4 +30,11 @@ var Thermostat = function(){
     return currentTemperature;
   };
 
+  Thermostat.prototype.resetTemperature = function () {
+    currentTemperature = DEFAULT_TEMPERATURE;
+    return currentTemperature;
+  };
+
+
+
 };
