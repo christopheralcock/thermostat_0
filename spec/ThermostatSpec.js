@@ -55,6 +55,7 @@ describe('Thermostat', function() {
     it('which decreases the MaxTemperature when turned on', function(){
       expect(MaxTemperature).toEqual(25);
     });
+
   });
 
   describe('it has a reser button', function(){

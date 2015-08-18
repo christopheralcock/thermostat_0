@@ -3,10 +3,25 @@ var Thermostat = function(){
   var currentTemperature = DEFAULT_TEMPERATURE;
   var MINIMUM_TEMPERATURE = 10;
   Thermostat.powerSaveOn;
+  // MaxTemperature = 25;
+
+// this function might be redundant
+// ----------------------------------------------------
 
   Thermostat.prototype.temperature = function () {
     return currentTemperature;
   };
+// ----------------------------------------------------
+
+
+  // Thermostat.prototype.powerSaveSwitch = function(){
+  //   if (MaxTemperature === 32) {
+  //       this.powerSaveOn;
+  //   }
+  //   else {
+  //     this.powerSaveOff;
+  //   }
+  // };
 
   Thermostat.prototype.powerSaveOff = function () {
       MaxTemperature = 32;
@@ -40,7 +55,7 @@ var Thermostat = function(){
       return "green";
     }
     else if (currentTemperature < 25) {
-      return "yellow";
+      return "gold";
     }
     else {
       return "red";

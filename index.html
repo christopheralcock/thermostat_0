@@ -2,19 +2,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Jasmine Spec Runner v2.3.4</title>
-
-  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.3.4/jasmine_favicon.png">
-  <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
-
-  <script src="lib/jasmine-2.3.4/jasmine.js"></script>
-  <script src="lib/jasmine-2.3.4/jasmine-html.js"></script>
-  <script src="lib/jasmine-2.3.4/boot.js"></script>
-
-  <script type="text/javascript" src="src/Thermostat.js"></script>
-  <script type="text/javascript" src="spec/ThermostatSpec.js"></script>
+  <title>Thermostat</title>
 </head>
 
 <body>
+  <h1><span id="temperature"></span>°C</h1>
+  <button type="button" id="increase">INCREASE THE TEMPERATURE</button>
+  <button type="button" id="decrease">DECREASE THE TEMPERATURE</button>
+
+  <!-- <form>
+    <input id="power_saving_mode" type="checkbox" checked>
+      Power Saving Mode
+  </form> -->
+  <button type="button" id="power_save_on">Power Save On</button>
+  <button type="button" id="power_save_off">Power Save Off</button>
+  <button type="button" id="reset">Reset Temperature</button>
+
+
 </body>
+
+
+<script type="text/javascript" src="src/Thermostat.js"></script>
+<script src="src/app.js"></script>
 </html>
