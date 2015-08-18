@@ -25,7 +25,7 @@ describe('Thermostat', function() {
     });
 
     it('the temperture up to MaxTemperature but not beyond', function(){
-      thermostat.powerSaveOff();
+      thermostat.powerSaveSwitch();
       for (i = 20; i < 32; i++) {thermostat.increase()};
       expect(thermostat.increase()).toEqual(32);
     });
@@ -48,7 +48,7 @@ describe('Thermostat', function() {
 
   describe('it has a powersaving button', function(){
     it('which increases MaxTemperature when turned off', function(){
-      thermostat.powerSaveOff();
+      thermostat.powerSaveSwitch();
       expect(MaxTemperature).toEqual(32);
     });
 
@@ -58,7 +58,7 @@ describe('Thermostat', function() {
 
   });
 
-  describe('it has a reser button', function(){
+  describe('it has a reset button', function(){
     it('which resets the temperature to default temperature', function(){
       thermostat.resetTemperature();
       expect(thermostat.temperature()).toEqual(20);
@@ -73,7 +73,7 @@ describe('Thermostat', function() {
 
     it('yellow for under 18-24', function(){
       for (i = 20; i < 24; i++) {thermostat.increase()};
-      expect(thermostat.colour()).toEqual("yellow");
+      expect(thermostat.colour()).toEqual("gold");
     });
 
     it('red for over 25', function(){
