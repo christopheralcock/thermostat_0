@@ -9,11 +9,11 @@ describe('Thermostat', function() {
   describe('it displays', function() {
 
     it('temperature', function() {
-      expect(thermostat.temperature).not.toBe(null);
+      expect(thermostat.showTemperature).not.toBe(null);
     });
 
     it('default temperature of 20', function() {
-      expect(thermostat.temperature()).toEqual(20);
+      expect(thermostat.showTemperature()).toEqual(20);
     });
 
   });
@@ -49,11 +49,11 @@ describe('Thermostat', function() {
   describe('it has a powersaving button', function(){
     it('which increases MaxTemperature when turned off', function(){
       thermostat.powerSaveSwitch();
-      expect(MaxTemperature).toEqual(32);
+      expect(thermostat.MaxTemperature).toEqual(32);
     });
 
     it('which decreases the MaxTemperature when turned on', function(){
-      expect(MaxTemperature).toEqual(25);
+      expect(thermostat.MaxTemperature).toEqual(25);
     });
 
   });
@@ -61,7 +61,7 @@ describe('Thermostat', function() {
   describe('it has a reset button', function(){
     it('which resets the temperature to default temperature', function(){
       thermostat.resetTemperature();
-      expect(thermostat.temperature()).toEqual(20);
+      expect(thermostat.showTemperature()).toEqual(20);
     });
   });
 
@@ -82,9 +82,6 @@ describe('Thermostat', function() {
     });
 
   });
-
-
-
 
 
 });

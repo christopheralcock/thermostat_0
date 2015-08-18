@@ -1,14 +1,19 @@
 thermostat = new Thermostat();
-temperaturehermostat.powerSaveOn();
+thermostat.powerSaveOn();
 
 $ (document).ready(function(){
-  
+
   $("#temperature").show(function() {
-    temperature.innerHTML = thermostat.temperature();
-    // temperature.style.color = thermostat.colour();
+    temperature.innerHTML = thermostat.showTemperature();
+    temperature.style.color = thermostat.colour();
   });
 
-})
+  $("#power_saving_mode").show(function() {
+    temperature.innerHTML = thermostat.showTemperature();
+    temperature.style.color = thermostat.colour();
+  });
+
+});
 
 
 
@@ -42,4 +47,3 @@ $ (document).ready(function(){
 //   temperature.innerHTML = thermostat.temperature();
 //   temperature.style.color = thermostat.colour();
 // };
-

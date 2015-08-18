@@ -1,51 +1,52 @@
 var Thermostat = function(){
-  var DEFAULT_TEMPERATURE = 20;
-  var currentTemperature = DEFAULT_TEMPERATURE;
-  var MINIMUM_TEMPERATURE = 10;
+  DEFAULT_TEMPERATURE = 20;
+  this.currentTemperature = DEFAULT_TEMPERATURE;
+  this.MINIMUM_TEMPERATURE = 10;
+  this.MaxTemperature = 25;
 
-  Thermostat.prototype.temperature = function () {
-    return currentTemperature;
+  Thermostat.prototype.showTemperature = function () {
+    return this.currentTemperature;
   };
 
 
   Thermostat.prototype.powerSaveOn = function () {
-      MaxTemperature = 25;
+      this.MaxTemperature = 25;
   };
 
   Thermostat.prototype.powerSaveSwitch = function(){
-    if (MaxTemperature === 25) {
-        MaxTemperature = 32;
+    if (this.MaxTemperature === 25) {
+        this.MaxTemperature = 32;
     }
     else {
-      MaxTemperature = 25;
+      this.MaxTemperature = 25;
     }
   };
 
 
   Thermostat.prototype.increase = function () {
-    if (currentTemperature < MaxTemperature) {
-        currentTemperature++;
+    if (this.currentTemperature < this.MaxTemperature) {
+        this.currentTemperature ++;
       }
-    return currentTemperature;
+    return this.currentTemperature;
   };
 
   Thermostat.prototype.decrease = function () {
-    if (currentTemperature > MINIMUM_TEMPERATURE) {
-      currentTemperature--;
+    if (this.currentTemperature > this.MINIMUM_TEMPERATURE) {
+      this.currentTemperature --;
     }
-    return currentTemperature;
+    return this.currentTemperature;
   };
 
   Thermostat.prototype.resetTemperature = function () {
-    currentTemperature = DEFAULT_TEMPERATURE;
-    return currentTemperature;
+    this.currentTemperature = DEFAULT_TEMPERATURE;
+    return this.currentTemperature;
   };
 
   Thermostat.prototype.colour = function () {
-    if (currentTemperature < 18) {
+    if (this.currentTemperature < 18) {
       return "green";
     }
-    else if (currentTemperature < 25) {
+    else if (this.currentTemperature < 25) {
       return "gold";
     }
     else {
